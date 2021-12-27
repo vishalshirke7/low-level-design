@@ -1,0 +1,21 @@
+WE NEED HIGH COHESION
+
+- means funciton should have only one responsibility
+ - Cohesion is the indication of the relationship within module. It is concept of intra-module. Cohesion has many types but usually highly cohesion is good for software.
+- Cohesion is defined as the degree to which the elements of a particular module are functionally related. Basically, cohesion is used to measure the functional strength of a module. For example, the systems having high cohesion will have elements such as instructions, groups of instructions, the definition of data, etc. strongly connected to each other. This helps in improving the focus on a given task and thus, high cohesion is preferred. There are various types of cohesion, out of which the popular ones include
+
+
+1. Functional cohesion
+In this type of cohesion, the elements inside a module work together to achieve one common goal. The elements work in coordination with the main aim of staying focused on the task assigned. They perform only the activities which are necessary to the assigned work.
+
+Example: Airline seat allotment to passengers involves Functional Cohesion.
+
+2. Sequential cohesion
+Maintaining a sequence of activities makes our task much easier, right? Yes, That’s what sequential cohesion does. In this type of cohesion, the output of a particular activity acts as an input to another. This helps in easy maintenance and provides good coupling due to a well-defined sequence.
+
+Example: Sequential Cohesion can be used in formatting raw records.
+
+3. Logical Cohesion
+Logical Cohesion is a type of cohesion in which all the elements within a module perform similar operations such as error handling.
+
+Example: A system having a set of scan functions for scanning the performance reports.

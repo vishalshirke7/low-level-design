@@ -1,6 +1,14 @@
 https://github.com/gopalbala
 https://www.youtube.com/watch?v=DkIvVtz-K0s&list=PLtppXJZiindpYyYywtbcdWHXN-nZPyxWv
 https://www.youtube.com/watch?v=v9ejT8FO-7I&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc
+
+
 Udit Aggrawal
 https://www.youtube.com/watch?v=vNHpsC5ng_E&list=PLF206E906175C7E07
 https://github.com/prasadgujar/low-level-design-primer/blob/master/resources.md
+
+
+Python Design Patterns - 
+https://github.com/faif/python-patterns
+https://www.youtube.com/watch?v=s_4ZrtQs8Do
+https://github.com/DovAmir/awesome-design-patterns#programming-language-design-patterns

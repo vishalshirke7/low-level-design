@@ -1,0 +1,9 @@
+WE NEED LOW COUPLING
+
+Coupling is defined as the degree to which the two modules are dependent on each other. It measures the strength of relationships between modules. For example, loosely coupled systems have modules that hardly depend on other modules and can focus better on their assigned tasks. Some popular types of coupling include: 
+
+1. No direct coupling
+As the name suggests, in no direct coupling, there is no direct connection between the modules. This form of coupling is desired as these modules have no interdependency and can focus on their tasks.
+
+2. Data coupling 
+In this type of coupling, one or more than one data item is passed between the interacting modules, thus resulting in interdependency between the modules. The data shared can be of integer or float data types.
