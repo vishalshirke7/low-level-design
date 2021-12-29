@@ -1,5 +1,5 @@
 "Open for extension, extend the exsiting code with new functionality"
-"Closed for modificatio, should not modify exsiting code"
+"Closed for modification, should not modify exsiting code"
 "Be able to add new functionality to existing code easily without modifying existing code."
 "e.g. Use abstract classes. These can define what subclasses will require and strengthen Principle 1. by separating code dutie"
 

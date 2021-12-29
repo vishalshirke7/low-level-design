@@ -1,69 +1,56 @@
-# Abstract Building
-class Building:
-    def __init__(self):
-        self.build_floor()
-        self.build_size()
-
-    def build_floor(self):
-        raise NotImplementedError
-
-    def build_size(self):
-        raise NotImplementedError
-
-    def __repr__(self):
-        return "Floor: {0.floor} | Size: {0.size}".format(self)
+from abc import ABC, abstractmethod
+from typing import List
 
 
-# Concrete Buildings
-class House(Building):
-    def build_floor(self):
-        self.floor = "One"
-
-    def build_size(self):
-        self.size = "Big"
+class Graphic(ABC):
+    @abstractmethod
+    def render(self) -> None:
+        raise NotImplementedError("You should implement this!")
 
 
-class Flat(Building):
-    def build_floor(self):
-        self.floor = "More than One"
+class CompositeGraphic(Graphic):
+    def __init__(self) -> None:
+        self.graphics: List[Graphic] = []
 
-    def build_size(self):
-        self.size = "Small"
+    def render(self) -> None:
+        for graphic in self.graphics:
+            graphic.render()
 
+    def add(self, graphic: Graphic) -> None:
+        self.graphics.append(graphic)
 
-# In some very complex cases, it might be desirable to pull out the building
-# logic into another function (or a method on another class), rather than being
-# in the base class '__init__'. (This leaves you in the strange situation where
-# a concrete class does not have a useful constructor)
-
-
-class ComplexBuilding:
-    def __repr__(self):
-        return "Floor: {0.floor} | Size: {0.size}".format(self)
+    def remove(self, graphic: Graphic) -> None:
+        self.graphics.remove(graphic)
 
 
-class ComplexHouse(ComplexBuilding):
-    def build_floor(self):
-        self.floor = "One"
+class Ellipse(Graphic):
+    def __init__(self, name: str) -> None:
+        self.name = name
 
-    def build_size(self):
-        self.size = "Big and fancy"
-
-
-def construct_building(cls):
-    building = cls()
-    building.build_floor()
-    building.build_size()
-    return building
+    def render(self) -> None:
+        print(f"Ellipse: {self.name}")
 
 
 def main():
-    house = House()
-    flat = Flat()
-    complex_house = construct_building(ComplexHouse)
+    ellipse1 = Ellipse("1")
+    ellipse2 = Ellipse("2")
+    ellipse3 = Ellipse("3")
+    ellipse4 = Ellipse("4")
+
+    graphic1 = CompositeGraphic()
+    graphic2 = CompositeGraphic()
+
+    graphic1.add(ellipse1)
+    graphic1.add(ellipse2)
+    graphic1.add(ellipse3)
+    graphic2.add(ellipse4)
+
+    graphic = CompositeGraphic()
+
+    graphic.add(graphic1)
+    graphic.add(graphic2)
+
+    graphic.render()
 
 
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+main()

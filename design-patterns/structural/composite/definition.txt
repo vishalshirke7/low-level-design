@@ -1,40 +1,23 @@
-he Builder Pattern is a creational pattern whose intent is to separate the construction of a complex
-object from its representation so that you can use the same construction process to create different
-representations.
-The Builder Pattern tries to solve,
-• How can a class create different representations of a complex object?
-• How can a class that includes creating a complex object be simplified?
-
-The Builder and Factory patterns are very similar in the fact they both instantiate new objects at
-runtime. The difference is when the process of creating the object is more complex, so rather than
-the Factory returning a new instance of ObjectA , it calls the builders director constructor method
-ObjectA.construct() that goes through a more complex construction process involving
-several steps. Both return an Object/Product.
-
-
 *What is this pattern about?
-It decouples the creation of a complex object and its representation,
-so that the same process can be reused to build objects from the same
-family.
-This is useful when you must separate the specification of an object
-from its actual representation (generally for abstraction).
+
+The composite pattern describes a group of objects that is treated the
+same way as a single instance of the same type of object. The intent of
+a composite is to "compose" objects into tree structures to represent
+part-whole hierarchies. Implementing the composite pattern lets clients
+treat individual objects and compositions uniformly.
 
 *What does this example do?
-The first example achieves this by using an abstract base
-class for a building, where the initializer (__init__ method) specifies the
-steps needed, and the concrete subclasses implement these steps.
-In other programming languages, a more complex arrangement is sometimes
-necessary. In particular, you cannot have polymorphic behaviour in a constructor in C++ -
-see https://stackoverflow.com/questions/1453131/how-can-i-get-polymorphic-behavior-in-a-c-constructor
-- which means this Python technique will not work. The polymorphism
-required has to be provided by an external, already constructed
-instance of a different class.
-In general, in Python this won't be necessary, but a second example showing
-this kind of arrangement is also included.
+
+The example implements a graphic class，which can be either an ellipse
+or a composition of several graphics. Every graphic can be printed.
 
 *Where is the pattern used practically?
-*References:
-https://sourcemaking.com/design_patterns/builder
 
-*TL;DR
-Decouples the creation of a complex object and its representation.
+In graphics editors a shape can be basic or complex. An example of a
+simple shape is a line, where a complex shape is a rectangle which is
+made of four line objects. Since shapes have many operations in common
+such as rendering the shape to screen, and since shapes follow a
+part-whole hierarchy, composite pattern can be used to enable the
+program to deal with all shapes uniformly.
+
+Describes a group of objects that is treated as a single instance.
