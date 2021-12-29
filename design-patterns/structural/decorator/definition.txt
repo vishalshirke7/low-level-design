@@ -1,0 +1,9 @@
+The decorator pattern is a structural pattern, that allows you to attach additional responsibilities to
+	an object at runtime.
+The decorator pattern is used in both the Object Oriented and Functional paradigms.
+The decorator pattern is different than the Python language feature of Python Decorators in its
+syntax and complete purpose. It is a similar concept in the way that it is a wrapper, but it also can be
+applied at runtime dynamically.
+The decorator pattern adds extensibility without modifying the original object.
+The decorator forwards requests to the enclosed object and can perform extra actions.
+You can nest decorators recursively.
