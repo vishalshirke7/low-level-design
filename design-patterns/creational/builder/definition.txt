@@ -1,4 +1,6 @@
-he Builder Pattern is a creational pattern whose intent is to separate the construction of a complex
+Basically you create a seperate builder class to create an object of actual class with only arguments that you need
+ 
+The Builder Pattern is a creational pattern whose intent is to separate the construction of a complex
 object from its representation so that you can use the same construction process to create different
 representations.
 The Builder Pattern tries to solve,
@@ -13,6 +15,7 @@ several steps. Both return an Object/Product.
 
 
 *What is this pattern about?
+
 It decouples the creation of a complex object and its representation,
 so that the same process can be reused to build objects from the same
 family.
@@ -20,6 +23,7 @@ This is useful when you must separate the specification of an object
 from its actual representation (generally for abstraction).
 
 *What does this example do?
+
 The first example achieves this by using an abstract base
 class for a building, where the initializer (__init__ method) specifies the
 steps needed, and the concrete subclasses implement these steps.
@@ -32,9 +36,4 @@ instance of a different class.
 In general, in Python this won't be necessary, but a second example showing
 this kind of arrangement is also included.
 
-*Where is the pattern used practically?
-*References:
-https://sourcemaking.com/design_patterns/builder
-
-*TL;DR
 Decouples the creation of a complex object and its representation.

@@ -1,40 +1,29 @@
-he Builder Pattern is a creational pattern whose intent is to separate the construction of a complex
-object from its representation so that you can use the same construction process to create different
-representations.
-The Builder Pattern tries to solve,
-• How can a class create different representations of a complex object?
-• How can a class that includes creating a complex object be simplified?
+"""the principal front of a building, that faces on to a street or open space.
+a deceptive outward appearance.
+"""
 
-The Builder and Factory patterns are very similar in the fact they both instantiate new objects at
-runtime. The difference is when the process of creating the object is more complex, so rather than
-the Factory returning a new instance of ObjectA , it calls the builders director constructor method
-ObjectA.construct() that goes through a more complex construction process involving
-several steps. Both return an Object/Product.
-
+- When you create a simplified interface that perfoms many other actions behind the scenes
+e.g - Can I withdraw 50 rs form the Bank?
+	- Check if the checking amount is valid 
+	- Check if the security code is vaid
+	- Check if funds are available
+	- Make changes accordingly 
 
 *What is this pattern about?
-It decouples the creation of a complex object and its representation,
-so that the same process can be reused to build objects from the same
-family.
-This is useful when you must separate the specification of an object
-from its actual representation (generally for abstraction).
-
-*What does this example do?
-The first example achieves this by using an abstract base
-class for a building, where the initializer (__init__ method) specifies the
-steps needed, and the concrete subclasses implement these steps.
-In other programming languages, a more complex arrangement is sometimes
-necessary. In particular, you cannot have polymorphic behaviour in a constructor in C++ -
-see https://stackoverflow.com/questions/1453131/how-can-i-get-polymorphic-behavior-in-a-c-constructor
-- which means this Python technique will not work. The polymorphism
-required has to be provided by an external, already constructed
-instance of a different class.
-In general, in Python this won't be necessary, but a second example showing
-this kind of arrangement is also included.
+The Facade pattern is a way to provide a simpler unified interface to
+a more complex system. It provides an easier way to access functions
+of the underlying system by providing a single entry point.
+This kind of abstraction is seen in many real life situations. For
+example, we can turn on a computer by just pressing a button, but in
+fact there are many procedures and operations done when that happens
+(e.g., loading programs from disk to memory). In this case, the button
+serves as an unified interface to all the underlying procedures to
+turn on a computer.
 
 *Where is the pattern used practically?
-*References:
-https://sourcemaking.com/design_patterns/builder
+This pattern can be seen in the Python standard library when we use
+the isdir function. Although a user simply uses this function to know
+whether a path refers to a directory, the system makes a few
+operations and calls other modules (e.g., os.stat) to give the result.
 
-*TL;DR
-Decouples the creation of a complex object and its representation.
+Provides a simpler unified interface to a complex system.

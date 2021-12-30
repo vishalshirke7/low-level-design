@@ -63,7 +63,4 @@ def main():
     complex_house = construct_building(ComplexHouse)
 
 
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+main()

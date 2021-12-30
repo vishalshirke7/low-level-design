@@ -1,69 +1,40 @@
-# Abstract Building
-class Building:
-    def __init__(self):
-        self.build_floor()
-        self.build_size()
+class TextTag:
+    """Represents a base text tag"""
 
-    def build_floor(self):
-        raise NotImplementedError
+    def __init__(self, text):
+        self._text = text
 
-    def build_size(self):
-        raise NotImplementedError
-
-    def __repr__(self):
-        return "Floor: {0.floor} | Size: {0.size}".format(self)
+    def render(self):
+        return self._text
 
 
-# Concrete Buildings
-class House(Building):
-    def build_floor(self):
-        self.floor = "One"
+class BoldWrapper(TextTag):
+    """Wraps a tag in <b>"""
 
-    def build_size(self):
-        self.size = "Big"
+    def __init__(self, wrapped):
+        self._wrapped = wrapped
 
-
-class Flat(Building):
-    def build_floor(self):
-        self.floor = "More than One"
-
-    def build_size(self):
-        self.size = "Small"
+    def render(self):
+        return f"<b>{self._wrapped.render()}</b>"
 
 
-# In some very complex cases, it might be desirable to pull out the building
-# logic into another function (or a method on another class), rather than being
-# in the base class '__init__'. (This leaves you in the strange situation where
-# a concrete class does not have a useful constructor)
+class ItalicWrapper(TextTag):
+    """Wraps a tag in <i>"""
 
+    def __init__(self, wrapped):
+        self._wrapped = wrapped
 
-class ComplexBuilding:
-    def __repr__(self):
-        return "Floor: {0.floor} | Size: {0.size}".format(self)
-
-
-class ComplexHouse(ComplexBuilding):
-    def build_floor(self):
-        self.floor = "One"
-
-    def build_size(self):
-        self.size = "Big and fancy"
-
-
-def construct_building(cls):
-    building = cls()
-    building.build_floor()
-    building.build_size()
-    return building
+    def render(self):
+        return f"<i>{self._wrapped.render()}</i>"
 
 
 def main():
-    house = House()
-    flat = Flat()
-    complex_house = construct_building(ComplexHouse)
+    simple_hello = TextTag("hello, world!")
+    special_hello = ItalicWrapper(BoldWrapper(simple_hello))
+
+    print("before:", simple_hello.render())
+    print("after:", special_hello.render())
 
 
-if __name__ == "__main__":
-    import doctest
 
-    doctest.testmod()
+main()
