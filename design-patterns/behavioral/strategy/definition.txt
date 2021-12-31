@@ -1,0 +1,11 @@
+*What is this pattern about?
+Define a family of algorithms, encapsulate each one, and make them interchangeable.
+Strategy lets the algorithm vary independently from clients that use it.
+
+Enables selecting an algorithm at runtime.
+
+The Strategy and State appear very similar, a good way to differentiate them is to consider whether
+the context is considered to be in a new state or not at various times in the lifecycle.
+In the Strategy, an object/context runs a chosen algorithm, but the state of the object/context doesn't
+change in case you want to try a different algorithm.
+Software Plugins can be implemented using the Strategy pattern.

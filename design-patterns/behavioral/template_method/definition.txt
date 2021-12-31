@@ -1,0 +1,6 @@
+Defines the skeleton of a base algorithm, deferring definition of exact
+steps to subclasses.
+
+Django class based views: https://docs.djangoproject.com/en/2.1/topics/class-based-views/
+
+

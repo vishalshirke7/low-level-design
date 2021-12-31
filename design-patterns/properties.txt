@@ -49,7 +49,7 @@ Behavioral						Chain of Responsibility			object that can fulfill a request
 								Iterator						how an aggregate's elements are accessed, traversed
 								Mediator						how and which objects interact with each other
 								Memento 						what private information is stored outside an object, and when
-								Observer                        number of objects that depend on another object; how the dependent objects stay up to date
+								Observer                        number of objects that depend of anoter bject and how object stay up to date
 								State                           states of an object
 								Strategy                        an algorithm
 								TemplateMethod                  steps of an algorithm
@@ -62,7 +62,13 @@ how objects are composed and finally represented.
 structural techniques, and to form structures with more or altered flexibility.
 • Behavioral : Are concerned with the inner algorithms, process flow, the assignment of
 responsibilities and the intercommunication between objects.
-
+- Behavioral patterns are concerned with algorithms and theassignment of
+		responsibilities between objects.
+- Behavioral patternsdescribe not just patterns
+	of objects or classes but also the patternsof communication between them.
+- These patterns characterize complexcontrol flow that's difficult to follow at run-time.
+- They shift yourfocus away from flow of control to let you concentrate just on
+	the wayobjects are interconnected
 
 
 
