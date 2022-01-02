@@ -1,149 +1,55 @@
-"The Abstract Factory Interface"
+import random
 from abc import ABCMeta, abstractmethod
 
 
-class IFurnitureFactory(metaclass=ABCMeta):
-    "Abstract Furniture Factory Interface"
-
+class IHandler(metaclass=ABCMeta):
+    "The Handler Interface that the Successors should implement"
     @staticmethod
     @abstractmethod
-    def get_furniture(furniture):
-        "The static Abstract factory interface method"
+    def handle(payload):
+        "A method to implement"
 
-"Abstract Furniture Factory"
-class FurnitureFactory(IFurnitureFactory):
-    "The Abstract Factory Concrete Class"
 
+class Successor1(IHandler):
+    "A Concrete Handler"
     @staticmethod
-    def get_furniture(furniture):
-        "Static get_factory method"
-        try:
-            if furniture in ['SmallChair', 'MediumChair', 'BigChair']:
-                return ChairFactory().get_chair(furniture)
-            if furniture in ['SmallTable', 'MediumTable', 'BigTable']:
-                return TableFactory().get_table(furniture)
-            raise Exception('No Factory Found')
-        except Exception as _e:
-            print(_e)
-        return None
+    def handle(payload):
+        print(f"Successor1 payload = {payload}")
+        test = random.randint(1, 2)
+        if test == 1:
+            payload = payload + 1
+            payload = Successor1().handle(payload)
+        if test == 2:
+            payload = payload - 1
+            payload = Successor2().handle(payload)
+        return payload
 
-"The Factory Class"
-class ChairFactory:
 
+class Successor2(IHandler):
+    "A Concrete Handler"
     @staticmethod
-    def get_chair(chair):
-        "A static method to get a chair"
-        try:
-            if chair == 'SmallChair':
-                return SmallChair()
-            raise Exception('Chair Not Found')
-        except Exception as _e:
-            print(_e)
-        return None
+    def handle(payload):
+        print(f"Successor2 payload = {payload}")
+        test = random.randint(1, 3)
+        if test == 1:
+            payload = payload * 2
+            payload = Successor1().handle(payload)
+        if test == 2:
+            payload = payload / 2
+            payload = Successor2().handle(payload)
+        return payload
 
 
-"The Factory Class"
-class TableFactory:
-
+class Chain():
+    "A chain with a default first successor"
     @staticmethod
-    def get_table(table):
-        "A static method to get a table"
-        try:
-            if table == 'SmallTable':
-                return SmallTable()
-            raise Exception('Table Not Found')
-        except Exception as _e:
-            print(_e)
-        return None
+    def start(payload):
+        "Setting the first successor that will modify the payload"
+        return Successor1().handle(payload)
 
 
-"FactoryA Sample Code"
-class IProduct(metaclass=ABCMeta):
-    "A Hypothetical Class Interface (Product)"
-
-    @staticmethod
-    @abstractmethod
-    def create_object():
-        "An abstract interface method"
-
-
-class ConcreteProductA(IProduct):
-    "A Concrete Class that implements the IProduct interface"
-
-    def __init__(self):
-        self.name = "ConcreteProductA"
-
-    def create_object(self):
-        return self
-
-
-class FactoryA:
-
-    @staticmethod
-    def create_object(some_property):
-        "A static method to get a concrete product"
-        try:
-            if some_property == 'a':
-                return ConcreteProductA()
-            raise Exception('Class Not Found')
-        except Exception as _e:
-            print(_e)
-        return None        
-
-"FactoryB Sample Code"
-class IProduct(metaclass=ABCMeta):
-    "A Hypothetical Class Interface (Product)"
-
-    @staticmethod
-    @abstractmethod
-    def create_object():
-        "An abstract interface method"
-
-
-class ConcreteProductA(IProduct):
-    "A Concrete Class that implements the IProduct interface"
-
-    def __init__(self):
-        self.name = "ConcreteProductA"
-
-    def create_object(self):
-        return self
-
-class FactoryB:
-
-    @staticmethod
-    def create_object(some_property):
-        "A static method to get a concrete product"
-        try:
-            if some_property == 'a':
-                return ConcreteProductA()
-            raise Exception('Class Not Found')
-        except Exception as _e:
-            print(_e)
-        return None
-
-"The Chair Interface"
-class IChair(metaclass=ABCMeta):
-    "The Chair Interface (Product)"
-
-    @staticmethod
-    @abstractmethod
-    def get_dimensions():
-        "A static interface method"
-
-
-"The Table Interface"
-class ITable(metaclass=ABCMeta):
-    "The Table Interface (Product)"
-
-    @staticmethod
-    @abstractmethod
-    def get_dimensions():
-        "A static interface method"        
-
-# Main function
-FURNITURE = FurnitureFactory.get_furniture("SmallChair")
-print(f"{FURNITURE.__class__} : {FURNITURE.get_dimensions()}")
-
-FURNITURE = FurnitureFactory.get_furniture("MediumTable")
-print(f"{FURNITURE.__class__} : {FURNITURE.get_dimensions()}")
+# The Client
+CHAIN = Chain()
+PAYLOAD = 1
+OUT = CHAIN.start(PAYLOAD)
+print(f"Finished result = {OUT}")

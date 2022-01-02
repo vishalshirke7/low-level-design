@@ -1,8 +1,7 @@
-"The Command Pattern Concept"
 from abc import ABCMeta, abstractmethod
 
 
-class ICommand(metaclass=ABCMeta):  # pylint: disable=too-few-public-methods
+class ICommand(metaclass=ABCMeta):
     "The command interface, that all commands will implement"
     @staticmethod
     @abstractmethod
