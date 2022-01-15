@@ -28,21 +28,10 @@ def get_localizer(language: str = "English") -> object:
 
 
 def main():
-    """
-    # Create our localizers
-    >>> e, g = get_localizer(language="English"), get_localizer(language="Greek")
+    e, g = get_localizer(language="English"), get_localizer(language="Greek")
 
     # Localize some text
-    >>> for msg in "dog parrot cat bear".split():
-    ...     print(e.localize(msg), g.localize(msg))
-    dog σκύλος
-    parrot parrot
-    cat γάτα
-    bear bear
-    """
+    for msg in "dog parrot cat bear".split():
+        print(e.localize(msg), g.localize(msg))
 
-
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+main()        

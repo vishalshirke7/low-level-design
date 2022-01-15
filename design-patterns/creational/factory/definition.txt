@@ -4,7 +4,9 @@ Define an interface for creating an object, but let subclasses decide which clas
 to instantiate. Factory Method lets a class defer instantiation to subclasses.
 
 A Factory is an object for creating other objects.
+
 *What does this example do?
+
 The code shows a way to localize words in two languages: English and
 Greek. "get_localizer" is the factory function that constructs a
 localizer depending on the language chosen. The localizer object will
@@ -19,8 +21,6 @@ example, in a contact form of a web page, the subject and the message
 fields are created using the same form factory (CharField()), even
 though they have different implementations according to their
 purposes.
-*References:
-http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
-*TL;DR
+
 Creates objects without having to specify the exact class.
 
