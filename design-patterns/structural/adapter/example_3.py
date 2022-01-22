@@ -74,8 +74,3 @@ def main():
         print("A {0} goes {1}".format(obj.name, obj.make_noise()))
 
 main()
-
-# if __name__ == "__main__":
-#     import doctest
-
-#     doctest.testmod(optionflags=doctest.ELLIPSIS)

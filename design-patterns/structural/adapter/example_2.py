@@ -1,5 +1,3 @@
-# pylint: disable=too-few-public-methods
-"Adapter Concept Sample Code"
 from abc import ABCMeta, abstractmethod
 
 

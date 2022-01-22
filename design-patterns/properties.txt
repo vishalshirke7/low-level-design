@@ -56,19 +56,21 @@ Behavioral						Chain of Responsibility			object that can fulfill a request
 								Visitor                         operations that can be applied to object(s) without changing their class(es)
 
 
-Creational : Abstracts the instantiation process so that there is a logical separation between
-how objects are composed and finally represented.
-• Structural : Focuses more on how classes and objects are composed using the different
-structural techniques, and to form structures with more or altered flexibility.
-• Behavioral : Are concerned with the inner algorithms, process flow, the assignment of
-responsibilities and the intercommunication between objects.
-- Behavioral patterns are concerned with algorithms and theassignment of
-		responsibilities between objects.
-- Behavioral patternsdescribe not just patterns
-	of objects or classes but also the patternsof communication between them.
-- These patterns characterize complexcontrol flow that's difficult to follow at run-time.
-- They shift yourfocus away from flow of control to let you concentrate just on
-	the wayobjects are interconnected
+• CREATIONAL : Abstracts the instantiation process so that there is a logical separation between
+				how objects are composed and finally represented.
+
+• STRUCTURAL : Focuses more on how classes and objects are composed using the different
+				structural techniques, and to form structures with more or altered flexibility.
+
+• BEHAVIORAL : Are concerned with the inner algorithms, process flow, the assignment of
+			  responsibilities and the intercommunication between objects.
+ 			- Behavioral patterns are concerned with algorithms and the assignment of
+			  responsibilities between objects.
+			- Behavioral patternsdescribe not just patterns
+				of objects or classes but also the patternsof communication between them.
+			- These patterns characterize complexcontrol flow that's difficult to follow at run-time.
+			- They shift your focus away from flow of control to let you concentrate just on
+				the way objects are interconnected
 
 
 

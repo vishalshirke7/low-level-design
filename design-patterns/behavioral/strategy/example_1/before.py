@@ -1,6 +1,3 @@
-"""
-Basic example of a Trading bot with a strategy pattern.
-"""
 import statistics
 from abc import ABC, abstractmethod
 

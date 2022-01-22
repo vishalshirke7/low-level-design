@@ -1,12 +1,7 @@
-"The Composite pattern concept"
 from abc import ABCMeta, abstractmethod
 
 
 class IComponent(metaclass=ABCMeta):
-    """
-    A component interface describing the common
-    fields and methods of leaves and composites
-    """
 
     reference_to_parent = None
 

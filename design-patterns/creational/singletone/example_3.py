@@ -21,7 +21,6 @@ class YourBorg(Borg):
 def main():
     rm1 = YourBorg()
     rm2 = YourBorg()
-
     rm1.state = 'Idle'
     rm2.state = 'Running'
     print('rm1: {0}'.format(rm1))
