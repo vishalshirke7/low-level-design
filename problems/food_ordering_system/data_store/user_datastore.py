@@ -5,10 +5,10 @@ class UserDAO(object):
 	registered_users = dict()
 	logged_in_user = None
 
-	def register_user(self, user_details):
-		user_object = user.User(**user_details)
-		UserDAO.registered_users[user_details['mobile']] = user_object
-		return user_object
+	def create_user(self, user_details):
+		new_user = user.User(**user_details)
+		self.registered_users[user_details['mobile']] = new_user
+		return new_user
 
 	def log_in(self):
 		pass

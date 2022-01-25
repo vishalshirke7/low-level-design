@@ -1,9 +1,13 @@
-from models import *
+from models import restaurant
 
 class RestaurantDAO(object):
 	
-	def register_restaurant(restaurant_details):
-		restaurant = Restaurant(**restaurant_details)
-		return restaurant
+	all_restaurants = dict()
 
-		
+	def create_restaurant(self, restaurant_details):
+		new_restaurant = restaurant.Restaurant(**restaurant_details)
+		self.all_restaurants[new_restaurant.restaurant_id] = new_restaurant
+		return new_restaurant
+
+	def increase_quantity(self, restaurant, additional_quantity):
+		setattr(restaurant, 'quantity', restaurant.quantity + additional_quantity)

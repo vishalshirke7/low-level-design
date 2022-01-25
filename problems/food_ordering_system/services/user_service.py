@@ -25,13 +25,13 @@ class UserManager(object):
                 'mobile': mobile,
                 'pincode': pincode                                                
             }
-            user = self.user_dao.register_user(user_details)
+            user = self.user_dao.create_user(user_details)
         return user
 
     def log_in(self, user):
         try:
             if self.user_dao.logged_in_user == user:
-                raise AlreadyLoggedInError('User Already Logged In', user.mobile)
+                raise AlreadyLoggedInError('User Already Logged In', user)
         except AlreadyLoggedInError as e:
             print(str(e))
         else:

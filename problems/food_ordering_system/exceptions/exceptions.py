@@ -19,4 +19,4 @@ class AlreadyLoggedInError(Error):
         self.user = user
 
     def __str__(self):
-        return f'{self.message} -> {self.input_data}'
+        return f'{self.message} -> {self.user}'

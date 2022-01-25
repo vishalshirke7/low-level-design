@@ -9,4 +9,8 @@ class Restaurant(object):
         self.restaurant_id = self._generate_restaurant_id()
 
     def _generate_restaurant_id(self):
-        return f'{self.name.lower()}'
+        return "-".join(self.name.lower().split(' '))
+
+
+    def __str__(self):
+        return f'{self.restaurant_id} {self.quantity}'
